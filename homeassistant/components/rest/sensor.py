@@ -155,6 +155,7 @@ class RestSensor(RestEntity, TemplateSensor):
                 try:
                     json_dict = json_loads(value)
                     if self._json_attrs_path is not None:
+                        #add logging here to see what goes wrong
                         json_dict = jsonpath(json_dict, self._json_attrs_path)
                     # jsonpath will always store the result in json_dict[0]
                     # so the next line happens to work exactly as needed to
